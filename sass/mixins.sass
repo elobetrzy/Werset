@@ -14,6 +14,9 @@ $widescreen-enabled: true !default
 $fullhd: 1344px + (2 * $gap) !default
 $fullhd-enabled: true !default
 
+=oddo($min, $max)
+  @media screen and (min-width: $min) and (max-width: $max - 1)
+    @content
 
 =from($device)
   @media screen and (min-width: $device)

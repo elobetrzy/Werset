@@ -125,20 +125,15 @@ html
         +tablet
           +wymiary(auto, 100%)
         +desktop
-          +wymiary($naw-wys-desktop, auto)
+          +wymiary(auto, auto)
           padding: 9px 5px
         +widescreen
-          +wymiary($naw-wys-widescreen, auto)
+          +wymiary(auto, auto)
           padding: 9px 5px
         +fullhd
-          +wymiary($naw-wys-fullhd, auto)
+          +wymiary(auto, auto)
           padding: 16px 5px
         .kategoria
-          // +mobile
-          // +tablet
-          // +desktop
-          // +widescreen
-          // +fullhd
           padding: 5px
           float: left
           text-align: center
@@ -175,3 +170,138 @@ html
               font-size: 1.5em
               padding: 6px
             +button(white, black, yellow, green, blue, red)
+    #container
+      $nowosci-szer: 70%
+      margin: 0 auto
+      height: auto
+      +kolory(white, black)
+      +mobile
+        width: $szer-mobile
+      +tablet
+        width: $szer-tablet
+      +desktop
+        width: $szer-desktop
+      +widescreen
+        width: $szer-widescreen
+      +fullhd
+        width: $szer-fullhd
+        // +mobile
+        // +tablet
+        // +desktop
+        // +widescreen
+        // +fullhd
+      #nowosci
+        float: left
+        margin: 0 auto
+        height: auto
+        +kolory(red, black)
+        +mobile
+          width: $szer-mobile
+        +tablet
+          width: $szer-tablet
+        +desktop
+          width: $nowosci-szer
+        +widescreen
+          width: $nowosci-szer
+        +fullhd
+          width: $nowosci-szer
+        .artykul
+          $art-hei: 25em
+          $szer: 90%
+          $margin: 3em
+          +kolory(rgb(58, 1, 99), rgb(159, 80, 107))
+          height: $art-hei
+          overflow: hidden
+          +until(630px)
+            height: $art-hei - 6em
+          +until(730px)
+            height: $art-hei - 3em
+          +mobile
+            width: 100%
+          +tablet
+            width: 100%
+          +desktop
+            width: $szer
+            margin: $margin auto
+          +widescreen
+            width: $szer
+            margin: $margin auto
+          +fullhd
+            width: $szer
+            margin: $margin auto
+          img
+            width: 100%
+            height: auto
+          .art-text
+            +kolory(blue, white)
+            .data
+              width: auto
+              height: auto
+              position: absolute
+              // +kolory(white, black)
+              +mobile
+                margin: ($art-hei - 11.5em) 1.5em
+              +tablet
+                margin: ($art-hei - 9.5em) 1.5em
+              +desktop
+                margin: ($art-hei - 9.5em) 1.5em
+              +widescreen
+                margin: ($art-hei - 9.5em) 1.5em
+              +fullhd
+                margin: ($art-hei - 9.5em) 1.5em
+              .nowosci-art-kat
+                +kolory(white, rgb(131, 26, 26))
+                +font(1.3em, bold, none)
+                padding: 6px
+                +mobile
+                +tablet
+                +desktop
+                +widescreen
+                +fullhd
+              span.kat-godz
+                +kolory(white, rgb(28, 28, 28))
+                +font(1.2em, none, underline)
+                padding: 3px 8px
+                margin: 0 3px
+                +mobile
+                +tablet
+                +desktop
+                +widescreen
+                +fullhd
+            .nowosci-art-tyt
+              width: auto
+              height: auto
+              position: absolute
+              margin: ($art-hei - 6.5em) 1.5em
+              +mobile
+                margin: ($art-hei - 8.5em) 1.5em
+              +tablet
+              +desktop
+              +widescreen
+              +fullhd
+              span.tytul
+                +kolory(white, rgba(0, 0, 0, 0.8))
+                +font(3.5em, bold, underline)
+                padding: 4px 16px
+                +mobile
+                  font-size: 3em
+                +tablet
+                +desktop
+                +widescreen
+                +fullhd
+      #podobne
+        $podobne-szer: 1 - $nowosci-szer
+        float: left
+        margin: 0 auto
+        height: auto
+        +kolory(red, green)
+        +mobile
+          width: $szer-mobile
+        +tablet
+          width: $szer-tablet
+        +desktop
+          width: 100% - $nowosci-szer
+        +widescreen
+          width: 100% - $nowosci-szer
+        +fullhd
+          width: 100% - $nowosci-szer
