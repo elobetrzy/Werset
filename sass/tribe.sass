@@ -1,0 +1,177 @@
+@import mixins
+@import zmienne
+
+.clear
+  clear: left
+.left
+  float: left
+
+// +mobile
+// +tablet
+// +desktop
+// +widescreen
+// +fullhd
+
+html
+  body
+    background-color: rgb(71, 80, 218)
+    margin: 0 0
+    header
+      margin: 0 auto
+      +kolory(rgb(135, 145, 136), rgb(71, 207, 36))
+      +mobile
+        +wymiary($naw-wys-mobile, $szer-mobile)
+      +tablet
+        +wymiary($naw-wys-tablet, $szer-tablet)
+      +desktop
+        +wymiary($naw-wys-desktop, $szer-desktop)
+      +widescreen
+        +wymiary($naw-wys-widescreen, $szer-widescreen)
+      +fullhd
+        +wymiary($naw-wys-fullhd, $szer-fullhd)
+      div#logotyp
+        +kolory(rgb(12, 134, 13), rgb(128, 115, 14))
+        float: left
+        +mobile
+          +wymiary($naw-wys-mobile, $naw-szer-mobile)
+          text-align: center
+        +tablet
+          +wymiary($naw-wys-tablet, $naw-szer-tablet)
+        +desktop
+          +wymiary($naw-wys-desktop, auto)
+        +widescreen
+          +wymiary($naw-wys-widescreen, auto)
+        +fullhd
+          +wymiary($naw-wys-fullhd, auto)
+        #logotyp-napis
+          +mobile
+            padding: 5px 0 0 30px
+          +tablet
+            padding: 5px 0 0 30px
+          +desktop
+            padding: 13px
+          +widescreen
+            padding: 13px
+          +fullhd
+            padding: 13px
+          span
+            $logo-napis: rgb(30, 176, 186)
+            +mobile
+              +wymiary($naw-wys-mobile, auto)
+              font-size: 2em
+              color: $logo-napis
+              font-weight: bold
+            +tablet
+              +wymiary($naw-wys-tablet, auto)
+              font-size: 2em
+              color: $logo-napis
+              font-weight: bold
+            +desktop
+              +wymiary($naw-wys-desktop, auto)
+              font-size: 2em
+              color: $logo-napis
+              font-weight: bold
+            +widescreen
+              +wymiary($naw-wys-widescreen, auto)
+              font-size: 2em
+              color: $logo-napis
+              font-weight: bold
+            +fullhd
+              // +wymiary($naw-wys-fullhd, auto)
+              font-size: 2em
+              color: $logo-napis
+              font-weight: bold
+        #logotyp-logo
+          +mobile
+            margin-right: 10px
+          +tablet
+            margin-right: 10px
+          +desktop
+            margin-right: 10px
+          +widescreen
+            margin-right: 10px
+          +fullhd
+            margin-right: 10px
+        span
+          +mobile
+            +wymiary($naw-wys-mobile, auto)
+          +tablet
+            +wymiary($naw-wys-tablet, auto)
+          +desktop
+            +wymiary($naw-wys-desktop, auto)
+          +widescreen
+            +wymiary($naw-wys-widescreen, auto)
+          +fullhd
+            // +wymiary($naw-wys-fullhd, auto)
+            font-size: 2em
+            color: rgb(16, 125, 135)
+            font-weight: bold
+        img
+          +mobile
+            +wymiary($naw-wys-mobile, auto)
+          +tablet
+            +wymiary($naw-wys-tablet, auto)
+          +desktop
+            +wymiary($naw-wys-desktop, auto)
+          +widescreen
+            +wymiary($naw-wys-widescreen, auto)
+          +fullhd
+            +wymiary($naw-wys-fullhd, auto)
+      div#pasek-kategorii
+        float: left
+        +kolory(rgb(241, 80, 245), rgb(36, 72, 136))
+        +mobile
+          +wymiary(auto, 100%)
+        +tablet
+          +wymiary(auto, 100%)
+        +desktop
+          +wymiary($naw-wys-desktop, auto)
+          padding: 9px 5px
+        +widescreen
+          +wymiary($naw-wys-widescreen, auto)
+          padding: 9px 5px
+        +fullhd
+          +wymiary($naw-wys-fullhd, auto)
+          padding: 16px 5px
+        .kategoria
+          // +mobile
+          // +tablet
+          // +desktop
+          // +widescreen
+          // +fullhd
+          padding: 5px
+          float: left
+          text-align: center
+          +mobile
+            width: 100%
+            border-bottom: 1px solid white
+            &:last-child
+              border: none
+          +tablet-only
+            width: 100%
+            border-bottom: 1px solid white
+            &:last-child
+              border: none
+          +desktop
+            width: auto
+          +widescreen
+            width: auto
+          +fullhd
+            width: auto
+          .kat
+            +font(1.5em, none, none)
+            +kolory(black, yellow)
+            +mobile
+              font-size: 1.5em
+            +tablet-only
+              font-size: 1.5em
+            +desktop
+              font-size: 1.5em
+              padding: 4px
+            +widescreen
+              font-size: 1.5em
+              padding: 5px
+            +fullhd
+              font-size: 1.5em
+              padding: 6px
+            +button(white, black, yellow, green, blue, red)
