@@ -212,12 +212,18 @@ html
           +kolory(rgb(58, 1, 99), rgb(159, 80, 107))
           height: $art-hei
           overflow: hidden
-          +until(630px)
+          +from(280px)
+            height: $art-hei - 16em
+          +from(340px)
+            height: $art-hei - 13em
+          +from(420px)
+            height: $art-hei - 11em
+          +from(520px)
+            height: $art-hei - 9em
+          +from(620px)
             height: $art-hei - 6em
-          +until(730px)
+          +from(720px)
             height: $art-hei - 3em
-          +mobile
-            width: 100%
           +tablet
             width: 100%
           +desktop
@@ -239,51 +245,73 @@ html
               height: auto
               position: absolute
               // +kolory(white, black)
-              +mobile
-                margin: ($art-hei - 11.5em) 1.5em
+              +until(320px)
+                margin: ($art-hei - 23em) 1.5em
+              +from(320px)
+                margin: ($art-hei - 20em) 1.5em
+              +from(420px)
+                margin: ($art-hei - 18.5em) 1.5em
+              +from(520px)
+                margin: ($art-hei - 17em) 1.5em
+              +from(620px)
+                margin: ($art-hei - 15.5em) 1.5em
+              +from(720px)
+                margin: ($art-hei - 12.5em) 1.5em
+              // +mobile
+              //   margin: ($art-hei - 11.5em) 1.5em
               +tablet
-                margin: ($art-hei - 9.5em) 1.5em
+                margin: ($art-hei - 12.5em) 1.5em
               +desktop
-                margin: ($art-hei - 9.5em) 1.5em
+                margin: ($art-hei - 11.5em) 1.5em
               +widescreen
-                margin: ($art-hei - 9.5em) 1.5em
+                margin: ($art-hei - 11.5em) 1.5em
               +fullhd
-                margin: ($art-hei - 9.5em) 1.5em
+                margin: ($art-hei - 11.5em) 1.5em
               .nowosci-art-kat
                 +kolory(white, rgb(131, 26, 26))
                 +font(1.3em, bold, none)
                 padding: 6px
-                +mobile
-                +tablet
-                +desktop
-                +widescreen
-                +fullhd
               span.kat-godz
                 +kolory(white, rgb(28, 28, 28))
                 +font(1.2em, none, underline)
                 padding: 3px 8px
                 margin: 0 3px
-                +mobile
-                +tablet
-                +desktop
-                +widescreen
-                +fullhd
             .nowosci-art-tyt
               width: auto
               height: auto
               position: absolute
               margin: ($art-hei - 6.5em) 1.5em
-              +mobile
-                margin: ($art-hei - 8.5em) 1.5em
+              +until(320px)
+                margin: ($art-hei - 20em) 1.5em
+              +from(320px)
+                margin: ($art-hei - 17em) 1.5em
+              +from(420px)
+                margin: ($art-hei - 15.5em) 1.5em
+              +from(520px)
+                margin: ($art-hei - 14em) 1.5em
+              +from(620px)
+                margin: ($art-hei - 12.5em) 1.5em
+              +from(720px)
+                margin: ($art-hei - 9.5em) 1.5em
               +tablet
+                margin: ($art-hei - 9em) 1.5em
               +desktop
+                margin: ($art-hei - 8.5em) 1.5em
               +widescreen
+                margin: ($art-hei - 8.5em) 1.5em
               +fullhd
+                margin: ($art-hei - 8.5em) 1.5em
               span.tytul
                 +kolory(white, rgba(0, 0, 0, 0.8))
                 +font(3.5em, bold, underline)
                 padding: 4px 16px
-                +mobile
+                +from(220px)
+                  font-size: 1.4em
+                +from(320px)
+                  font-size: 2em
+                +from(520px)
+                  font-size: 2.5em
+                +from(620px)
                   font-size: 3em
                 +tablet
                 +desktop
