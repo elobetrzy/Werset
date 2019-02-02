@@ -214,8 +214,8 @@ html
           overflow: hidden
           +from(280px)
             height: $art-hei - 16em
-          +from(340px)
-            height: $art-hei - 13em
+          +from(320px)
+            height: $art-hei - 14em
           +from(420px)
             height: $art-hei - 11em
           +from(520px)
@@ -245,8 +245,8 @@ html
               height: auto
               position: absolute
               // +kolory(white, black)
-              +until(320px)
-                margin: ($art-hei - 23em) 1.5em
+              +from(220px)
+                margin: ($art-hei - 21.5em) 1.5em
               +from(320px)
                 margin: ($art-hei - 20em) 1.5em
               +from(420px)
@@ -271,9 +271,13 @@ html
                 +kolory(white, rgb(131, 26, 26))
                 +font(1.3em, bold, none)
                 padding: 6px
+                +until(320px)
+                  +font(0.9em, none, none)
               span.kat-godz
                 +kolory(white, rgb(28, 28, 28))
                 +font(1.2em, none, underline)
+                +until(320px)
+                  +font(0.9em, none, none)
                 padding: 3px 8px
                 margin: 0 3px
             .nowosci-art-tyt
@@ -281,8 +285,8 @@ html
               height: auto
               position: absolute
               margin: ($art-hei - 6.5em) 1.5em
-              +until(320px)
-                margin: ($art-hei - 20em) 1.5em
+              +from(220px)
+                margin: ($art-hei - 19em) 1.5em
               +from(320px)
                 margin: ($art-hei - 17em) 1.5em
               +from(420px)
@@ -306,17 +310,13 @@ html
                 +font(3.5em, bold, underline)
                 padding: 4px 16px
                 +from(220px)
-                  font-size: 1.4em
+                  font-size: 1.2em
                 +from(320px)
-                  font-size: 2em
+                  font-size: 1.5em
                 +from(520px)
                   font-size: 2.5em
                 +from(620px)
                   font-size: 3em
-                +tablet
-                +desktop
-                +widescreen
-                +fullhd
       #podobne
         $podobne-szer: 1 - $nowosci-szer
         float: left
