@@ -335,21 +335,36 @@ html
           width: 100% - $nowosci-szer
         #tytul-podobne
           text-align: center
+          padding: 0.5em 0 1em 0
           span.podobne
             font-size: 3em
             +kolory(rgb(150, 164, 67), rgb(33, 49, 93))
-        .podobne
+        .zobacztez
           $podobne-wys: 10em
-          +wymiary($podobne-wys, 100%)
-          border-bottom: 8px dashed white
+          border-bottom: 2px solid rgb(93, 198, 60)
           overflow: hidden
+          margin-bottom: 1em
+          +wymiary($podobne-wys, 100%)
+          +mobile
+            margin-bottom: 0
+            border: none
+          +tablet
+            margin-bottom: 0
+            border: none
+          +desktop
+          +widescreen
+          +fullhd
+            +wymiary($podobne-wys, 100%)
           img
             // Obrazek nie może sam zmieniac rozmiaru, musi się dopasowywac
             +wymiary(auto, 100%)
-          .podobne-tytul
-            +kolory(white, rgba(0, 0, 0, 0.8))
-            position: absolute
-            margin: -$podobne-wys - 4 1em
-            padding: 8px
-            span
-              font-size: 1.5em
+          .pod-tekst
+            background-color: rgb(249, 247, 37)
+            .podobne-tytul
+              +kolory(white, rgba(0, 0, 0, 0.8))
+              +wymiary(auto, auto)
+              position: absolute
+              margin: ($podobne-wys / 2) + 1 1em
+              padding: 8px
+              span
+                +font(1.5em, bold, underline)
