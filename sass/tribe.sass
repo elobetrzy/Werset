@@ -185,11 +185,7 @@ html
         width: $szer-widescreen
       +fullhd
         width: $szer-fullhd
-        // +mobile
-        // +tablet
-        // +desktop
-        // +widescreen
-        // +fullhd
+
       #nowosci
         float: left
         margin: 0 auto
@@ -318,11 +314,15 @@ html
                 +from(620px)
                   font-size: 3em
       #podobne
+        // +mobile
+        // +tablet
+        // +desktop
+        // +widescreen
+        // +fullhd
         $podobne-szer: 1 - $nowosci-szer
         float: left
         margin: 0 auto
         height: auto
-        +kolory(red, green)
         +mobile
           width: $szer-mobile
         +tablet
@@ -333,3 +333,23 @@ html
           width: 100% - $nowosci-szer
         +fullhd
           width: 100% - $nowosci-szer
+        #tytul-podobne
+          text-align: center
+          span.podobne
+            font-size: 3em
+            +kolory(rgb(150, 164, 67), rgb(33, 49, 93))
+        .podobne
+          $podobne-wys: 10em
+          +wymiary($podobne-wys, 100%)
+          border-bottom: 8px dashed white
+          overflow: hidden
+          img
+            // Obrazek nie może sam zmieniac rozmiaru, musi się dopasowywac
+            +wymiary(auto, 100%)
+          .podobne-tytul
+            +kolory(white, rgba(0, 0, 0, 0.8))
+            position: absolute
+            margin: -$podobne-wys - 4 1em
+            padding: 8px
+            span
+              font-size: 1.5em
