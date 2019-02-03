@@ -14,11 +14,11 @@
 
 html
   body
-    background-color: rgb(71, 80, 218)
+    background-color: $tlo2
     margin: 0 0
     header
       margin: 0 auto
-      +kolory(rgb(135, 145, 136), rgb(71, 207, 36))
+      +kolory(rgb(135, 145, 136), $bg-naw)
       +mobile
         +wymiary($naw-wys-mobile, $szer-mobile)
       +tablet
@@ -30,7 +30,7 @@ html
       +fullhd
         +wymiary($naw-wys-fullhd, $szer-fullhd)
       div#logotyp
-        +kolory(rgb(12, 134, 13), rgb(128, 115, 14))
+        background-color: $bg-log
         float: left
         +mobile
           +wymiary($naw-wys-mobile, $naw-szer-mobile)
@@ -55,31 +55,26 @@ html
           +fullhd
             padding: 13px
           span
-            $logo-napis: rgb(30, 176, 186)
+            color: $c-log
             +mobile
               +wymiary($naw-wys-mobile, auto)
               font-size: 2em
-              color: $logo-napis
               font-weight: bold
             +tablet
               +wymiary($naw-wys-tablet, auto)
               font-size: 2em
-              color: $logo-napis
               font-weight: bold
             +desktop
               +wymiary($naw-wys-desktop, auto)
               font-size: 2em
-              color: $logo-napis
               font-weight: bold
             +widescreen
               +wymiary($naw-wys-widescreen, auto)
               font-size: 2em
-              color: $logo-napis
               font-weight: bold
             +fullhd
               // +wymiary($naw-wys-fullhd, auto)
               font-size: 2em
-              color: $logo-napis
               font-weight: bold
         #logotyp-logo
           +mobile
@@ -119,7 +114,7 @@ html
             +wymiary($naw-wys-fullhd, auto)
       div#pasek-kategorii
         float: left
-        +kolory(rgb(241, 80, 245), rgb(36, 72, 136))
+        // +kolory(rgb(241, 80, 245), rgb(36, 72, 136))
         +mobile
           +wymiary(auto, 100%)
         +tablet
@@ -139,12 +134,12 @@ html
           text-align: center
           +mobile
             width: 100%
-            border-bottom: 1px solid white
+            border-bottom: 1px solid $kolor
             &:last-child
               border: none
           +tablet-only
             width: 100%
-            border-bottom: 1px solid white
+            border-bottom: 1px solid $kolor
             &:last-child
               border: none
           +desktop
@@ -155,7 +150,7 @@ html
             width: auto
           .kat
             +font(1.5em, none, none)
-            +kolory(black, yellow)
+            +kolory($c-kat, $bg-kat)
             +mobile
               font-size: 1.5em
             +tablet-only
@@ -169,12 +164,12 @@ html
             +fullhd
               font-size: 1.5em
               padding: 6px
-            +button(white, black, yellow, green, blue, red)
+            +button($kolor, $tlo, yellow, green, blue, red)
     #container
       $nowosci-szer: 70%
       margin: 0 auto
       height: auto
-      +kolory(white, black)
+      +kolory($kolor, $tlo)
       +mobile
         width: $szer-mobile
       +tablet
@@ -190,7 +185,6 @@ html
         float: left
         margin: 0 auto
         height: auto
-        +kolory(red, black)
         +mobile
           width: $szer-mobile
         +tablet
@@ -235,12 +229,11 @@ html
             width: 100%
             height: auto
           .art-text
-            +kolory(blue, white)
+            +kolory(blue, $kolor)
             .data
               width: auto
               height: auto
               position: absolute
-              // +kolory(white, black)
               +from(220px)
                 margin: ($art-hei - 21.5em) 1.5em
               +from(320px)
@@ -264,13 +257,13 @@ html
               +fullhd
                 margin: ($art-hei - 11.5em) 1.5em
               .nowosci-art-kat
-                +kolory(white, rgb(131, 26, 26))
+                +kolory($c-dodatek, $tlo-dodatek)
                 +font(1.3em, bold, none)
                 padding: 6px
                 +until(320px)
                   +font(0.9em, none, none)
               span.kat-godz
-                +kolory(white, rgb(28, 28, 28))
+                +kolory($kolor, $tytul-przeswit)
                 +font(1.2em, none, underline)
                 +until(320px)
                   +font(0.9em, none, none)
@@ -302,7 +295,7 @@ html
               +fullhd
                 margin: ($art-hei - 8.5em) 1.5em
               span.tytul
-                +kolory(white, rgba(0, 0, 0, 0.8))
+                +kolory($kolor, $tytul-przeswit)
                 +font(3.5em, bold, underline)
                 padding: 4px 16px
                 +from(220px)
@@ -313,6 +306,22 @@ html
                   font-size: 2.5em
                 +from(620px)
                   font-size: 3em
+        #pagination
+          float: left
+          text-align: center
+          margin: 0 auto
+          +wymiary(6em, 100%)
+          background-color: $tlo
+          .paginacja
+            margin-top: 1em
+            .ilosc-stron
+              text-align: center
+              margin-left: 8px
+              padding: 8px
+              +kolory($c-kat, $bg-kat)
+              +font(1.25em, bold, none)
+              +wymiary(auto, auto)
+              +button($bg-kat, $c-kat, $bg-kat, $tlo2, $c-dodatek, $tlo-dodatek)
       #podobne
         // +mobile
         // +tablet
@@ -338,7 +347,9 @@ html
           padding: 0.5em 0 1em 0
           span.podobne
             font-size: 3em
-            +kolory(rgb(150, 164, 67), rgb(33, 49, 93))
+            color: $kolor
+            text-transform: uppercase
+            font-style: italic
         .zobacztez
           $podobne-wys: 10em
           border-bottom: 2px solid rgb(93, 198, 60)
@@ -361,7 +372,7 @@ html
           .pod-tekst
             background-color: rgb(249, 247, 37)
             .podobne-tytul
-              +kolory(white, rgba(0, 0, 0, 0.8))
+              +kolory($kolor, $tytul-przeswit)
               +wymiary(auto, auto)
               position: absolute
               margin: ($podobne-wys / 2) + 1 1em
