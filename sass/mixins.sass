@@ -121,7 +121,8 @@ $fullhd-enabled: true !default
   color: $c
   background-color: $bcg
 
-=button($h, $hbg, $a, $abg, $f, $fbg)
+=przycisk($c, $bg, $h, $hbg, $a, $abg, $f, $fbg)
+  +kolory($c, $bg)
   &:hover
     color: $h
     background-color: $hbg
