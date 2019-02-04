@@ -180,7 +180,6 @@ html
         width: $szer-widescreen
       +fullhd
         width: $szer-fullhd
-
       #nowosci
         float: left
         margin: 0 auto
@@ -198,10 +197,11 @@ html
         .artykul
           $art-hei: 25em
           $szer: 90%
-          $margin: 3em
+          $margin: 0em
           +kolory(rgb(58, 1, 99), rgb(159, 80, 107))
           height: $art-hei
           overflow: hidden
+          transition: all 0.5s
           +from(280px)
             height: $art-hei - 16em
           +from(320px)
@@ -228,6 +228,9 @@ html
           img
             width: 100%
             height: auto
+          &:hover
+            opacity: 0.9
+            width: 100%
           .art-text
             +kolory(blue, $kolor)
             .data
@@ -295,17 +298,30 @@ html
               +fullhd
                 margin: ($art-hei - 8.5em) 1.5em
               span.tytul
+                $span-tytul: 1.7em
                 +kolory($kolor, $tytul-przeswit)
-                +font(3.5em, bold, underline)
+                +font($span-tytul, bold, underline)
                 padding: 4px 16px
                 +from(220px)
-                  font-size: 1.2em
+                  font-size: $span-tytul - 0.8
                 +from(320px)
-                  font-size: 1.5em
+                  font-size: $span-tytul - 0.5
+                +from(420px)
+                  font-size: $span-tytul - 0.5
                 +from(520px)
-                  font-size: 2.5em
+                  font-size: $span-tytul - 0.5
                 +from(620px)
-                  font-size: 3em
+                  font-size: $span-tytul - 0.35
+                +from(720px)
+                  font-size: $span-tytul - 0.35
+                +tablet
+                  font-size: $span-tytul - 0.1
+                +desktop
+                  font-size: $span-tytul - 0.25
+                +widescreen
+                  font-size: $span-tytul - 0.2
+                +fullhd
+                  font-size: $span-tytul
         #pagination
           float: left
           text-align: center
@@ -382,17 +398,16 @@ html
     footer
       margin: 0 auto
       text-align: center
-      +kolory($kolor, $tlo-dodatek)
       +mobile
-        +wymiary($foo-wys-mobile, $szer-mobile)
+        +wymiary($foo-wys-mobile + 4.5, $szer-mobile)
       +tablet
-        +wymiary($foo-wys-tablet, $szer-tablet)
+        +wymiary($foo-wys-tablet + 4.5, $szer-tablet)
       +desktop
-        +wymiary($foo-wys-desktop, $szer-desktop)
+        +wymiary($foo-wys-desktop + 4.5, $szer-desktop)
       +widescreen
-        +wymiary($foo-wys-widescreen, $szer-widescreen)
+        +wymiary($foo-wys-widescreen + 4.5, $szer-widescreen)
       +fullhd
-        +wymiary($foo-wys-fullhd, $szer-fullhd)
+        +wymiary($foo-wys-fullhd + 4.5, $szer-fullhd)
       #footer-logo
         padding: $footer-margin 0
         +wymiary($footer-logo-wymiar, 100%)
@@ -421,6 +436,7 @@ html
           margin: 0 auto
           text-align: center
           .foo-div-social
+            transition: all 0.4s
             +przyciskbg($bg-kat, $kolor, $bg-kat, $bg-kat)
             // +przycisk(white, red, white, black, black, green, red, red)
             +wymiary($footer-social-wymiar, $footer-social-wymiar)
