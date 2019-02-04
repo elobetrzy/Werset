@@ -123,12 +123,31 @@ $fullhd-enabled: true !default
 
 =przycisk($c, $bg, $h, $hbg, $a, $abg, $f, $fbg)
   +kolory($c, $bg)
+  // Kiedy wisi nad nim kursor myszy
   &:hover
     color: $h
     background-color: $hbg
+  // Kiedy jest nad nim kursor tekstu/tab
   &:focus
     color: $f
     background-color: $fbg
+  // Kiedy jest naciskany
   &:active
     color: $a
+    background-color: $abg
+=przyciskc($c, $h, $a, $f)
+  color: $c
+  &:hover
+    color: $h
+  &:focus
+    color: $f
+  &:active
+    color: $a
+=przyciskbg($bg, $hbg, $abg, $fbg)
+  background-color: $bg
+  &:hover
+    background-color: $hbg
+  &:focus
+    background-color: $fbg
+  &:active
     background-color: $abg

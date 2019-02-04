@@ -396,7 +396,7 @@ html
       #footer-logo
         padding: $footer-margin 0
         +wymiary($footer-logo-wymiar, 100%)
-        +kolory(rgb(212, 195, 72), rgb(74, 135, 48))
+        +kolory($kolor, $tlo-stopka)
         img
           +wymiaryman($footer-logo-wymiar, auto)
           // +mobile
@@ -413,7 +413,7 @@ html
 
         $ilosc-social: 3
         +wymiary($footer-social-wymiar, 100%)
-        +kolory(rgb(104, 193, 64), rgb(90, 216, 218))
+        +kolory($kolor, $tlo-stopka)
         text-align: center
         padding: $footer-margin 0
         #footer-social-box
@@ -421,8 +421,10 @@ html
           margin: 0 auto
           text-align: center
           .foo-div-social
+            +przyciskbg($bg-kat, $kolor, $bg-kat, $bg-kat)
+            // +przycisk(white, red, white, black, black, green, red, red)
             +wymiary($footer-social-wymiar, $footer-social-wymiar)
-            +kolory(rgb(116, 186, 17), rgb(15, 87, 163))
+            // +kolory($kolor, $tlo)
             border-radius: 50%
             float: left
             margin-left: 1em
@@ -430,14 +432,20 @@ html
               margin-left: 0
             span
               font-size: 2em
+            a
+              i
+                font-size: 2em
+                margin: 8px
+                +przyciskc($tlo, $tlo, $tlo, $tlo)
       #footer-menu
         +wymiarymin($footer-social-wymiar, 100%)
-        +kolory(rgb(19, 89, 158), rgb(237, 116, 17))
+        +kolory($kolor, $tlo-stopka)
         #footer-menu-opcje
           +wymiarymin(auto, auto)
           padding: $footer-margin
           a
+            text-transform: uppercase
             margin-right: 10px
             padding: 8px 16px
             +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek, $tlo, $kolor)
-            +font(1.5em, bold, none)
+            +font(1.3em, bold, none)
