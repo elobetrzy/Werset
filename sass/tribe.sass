@@ -18,6 +18,7 @@ html
     margin: 0 0
     header
       margin: 0 auto
+      font-family: 'Roboto Condensed', sans-serif
       +kolory(rgb(135, 145, 136), $bg-naw)
       +mobile
         +wymiary($naw-wys-mobile, $szer-mobile)
@@ -169,6 +170,7 @@ html
       $nowosci-szer: 70%
       margin: 0 auto
       height: auto
+      font-family: 'Roboto Condensed', sans-serif
       +kolory($kolor, $tlo)
       +mobile
         width: $szer-mobile
@@ -202,6 +204,7 @@ html
           height: $art-hei
           overflow: hidden
           transition: all 0.5s
+          font-family: 'Roboto Condensed', sans-serif
           +from(280px)
             height: $art-hei - 16em
           +from(320px)
@@ -260,16 +263,38 @@ html
               +fullhd
                 margin: ($art-hei - 11.5em) 1.5em
               .nowosci-art-kat
+                $nowosci-art-kat: 1.3em
                 +kolory($c-dodatek, $tlo-dodatek)
-                +font(1.3em, bold, none)
+                +font($nowosci-art-kat, bold, none)
                 padding: 6px
-                +until(320px)
-                  +font(0.9em, none, none)
+                +from(320px)
+                  +font($nowosci-art-kat - 0.5, none, none)
+                +mobile
+                  +font($nowosci-art-kat - 0.4, none, none)
+                +tablet
+                  +font($nowosci-art-kat - 0.3, none, none)
+                +desktop
+                  +font($nowosci-art-kat - 0.2, none, none)
+                +widescreen
+                  +font($nowosci-art-kat - 0.1, none, none)
+                +fullhd
+                  +font($nowosci-art-kat, none, none)
               span.kat-godz
+                $kat-godz: 1.2em
                 +kolory($kolor, $tytul-przeswit)
-                +font(1.2em, none, underline)
+                +font($kat-godz, none, underline)
                 +until(320px)
                   +font(0.9em, none, none)
+                +mobile
+                  font-size: $kat-godz - 0.3
+                +tablet
+                  font-size: $kat-godz - 0.2
+                +desktop
+                  font-size: $kat-godz - 0.1
+                +widescreen
+                  font-size: $kat-godz
+                +fullhd
+                  font-size: $kat-godz
                 padding: 3px 8px
                 margin: 0 3px
             .nowosci-art-tyt
@@ -280,7 +305,7 @@ html
               +from(220px)
                 margin: ($art-hei - 19em) 1.5em
               +from(320px)
-                margin: ($art-hei - 17em) 1.5em
+                margin: ($art-hei - 17.5em) 1.5em
               +from(420px)
                 margin: ($art-hei - 15.5em) 1.5em
               +from(520px)
@@ -298,7 +323,7 @@ html
               +fullhd
                 margin: ($art-hei - 8.5em) 1.5em
               span.tytul
-                $span-tytul: 1.7em
+                $span-tytul: 1.55em
                 +kolory($kolor, $tytul-przeswit)
                 +font($span-tytul, bold, underline)
                 padding: 4px 16px
@@ -311,9 +336,9 @@ html
                 +from(520px)
                   font-size: $span-tytul - 0.5
                 +from(620px)
-                  font-size: $span-tytul - 0.35
+                  font-size: $span-tytul - 0.15
                 +from(720px)
-                  font-size: $span-tytul - 0.35
+                  font-size: $span-tytul - 0.05
                 +tablet
                   font-size: $span-tytul - 0.1
                 +desktop
@@ -321,13 +346,14 @@ html
                 +widescreen
                   font-size: $span-tytul - 0.2
                 +fullhd
-                  font-size: $span-tytul
+                  font-size: $span-tytul - 0.1
         #pagination
           float: left
           text-align: center
           margin: 0 auto
           +wymiary(6em, 100%)
           background-color: $tlo
+          font-family: 'Roboto Condensed', sans-serif
           .paginacja
             margin-top: 1em
             .ilosc-stron
@@ -394,10 +420,33 @@ html
               margin: ($podobne-wys / 2) + 1 1em
               padding: 8px
               span
-                +font(1.5em, bold, underline)
+                $podobne-tytul: 1.5em
+                +font($podobne-tytul, bold, underline)
+                font-family: 'Roboto Condensed', sans-serif
+                +from(220px)
+                  font-size: $podobne-tytul - 0.8
+                +from(320px)
+                  font-size: $podobne-tytul - 0.5
+                +from(420px)
+                  font-size: $podobne-tytul - 0.5
+                +from(520px)
+                  font-size: $podobne-tytul - 0.5
+                +from(620px)
+                  font-size: $podobne-tytul - 0.15
+                +from(720px)
+                  font-size: $podobne-tytul - 0.05
+                +tablet
+                  font-size: $podobne-tytul - 0.1
+                +desktop
+                  font-size: $podobne-tytul - 0.25
+                +widescreen
+                  font-size: $podobne-tytul - 0.2
+                +fullhd
+                  font-size: $podobne-tytul - 0.1
     footer
       margin: 0 auto
       text-align: center
+      font-family: 'Roboto Condensed', sans-serif
       +mobile
         +wymiary($foo-wys-mobile + 4.5, $szer-mobile)
       +tablet
@@ -428,7 +477,7 @@ html
 
         $ilosc-social: 3
         +wymiary($footer-social-wymiar, 100%)
-        +kolory($kolor, blue)
+        +kolory($kolor, $tlo-stopka)
         text-align: center
         padding: $footer-margin 0
         #footer-social-box
