@@ -18,7 +18,7 @@ html
     margin: 0 0
     header
       margin: 0 auto
-      font-family: 'Roboto Condensed', sans-serif
+      font-family: $font-header
       +kolory(rgb(135, 145, 136), $bg-naw)
       +mobile
         +wymiary($naw-wys-mobile, $szer-mobile)
@@ -45,7 +45,7 @@ html
         +fullhd
           +wymiary($naw-wys-fullhd, auto)
         #logotyp-napis
-          font-family: 'Oswald', sans-serif
+          font-family: $font-logo
           +mobile
             padding: 5px 0 0 30px
           +tablet
@@ -206,7 +206,7 @@ html
           height: $art-hei
           overflow: hidden
           transition: all 0.5s
-          font-family: 'Roboto Condensed', sans-serif
+          font-family: $font-artykul
           +from(280px)
             height: $art-hei - 16em
           +from(320px)
@@ -328,7 +328,7 @@ html
                 $span-tytul: 1.55em
                 +kolory($kolor, $tytul-przeswit)
                 +font($span-tytul, bold, underline)
-                font-family: 'Oswald', sans-serif
+                font-family: $font-title
                 padding: 4px 16px
                 +from(220px)
                   font-size: $span-tytul - 0.8
@@ -350,6 +350,57 @@ html
                   font-size: $span-tytul - 0.2
                 +fullhd
                   font-size: $span-tytul - 0.1
+        .artykul2-tytul
+          $artykul2-tytul: 3em
+          width: 90%
+          text:
+            align: center
+            decoration: underline
+          margin: 0.5em auto 0 auto
+          font:
+            size: 3em
+            family: $font-title
+          +kolory($kolor, none)
+          +mobile
+            font-size: $artykul2-tytul - 1
+          +tablet
+            font-size: $artykul2-tytul - 0.4
+          +desktop
+            font-size: $artykul2-tytul - 0.25
+          +widescreen
+            font-size: $artykul2-tytul
+          +fullhd
+            font-size: $artykul2-tytul
+        .artykul2-info
+          width: 100%
+          font-family: $font-info
+          padding: 1em
+          .artykul2-info-kategoria
+            $nowosci-art-kat: 1.3em
+            +kolory($c-dodatek, $tlo-dodatek)
+            +font($nowosci-art-kat, bold, none)
+            padding: 6px
+            +from(320px)
+              +font($nowosci-art-kat - 0.5, none, none)
+            +mobile
+              +font($nowosci-art-kat - 0.4, none, none)
+            +tablet
+              +font($nowosci-art-kat - 0.3, none, none)
+            +desktop
+              +font($nowosci-art-kat - 0.2, none, none)
+            +widescreen
+              +font($nowosci-art-kat - 0.1, none, none)
+            +fullhd
+              +font($nowosci-art-kat, none, none)
+          .artykul2-info-godzina
+            margin-left: 1em
+            color: $kolor
+            padding: 4px
+            text-decoration: underline
+            font:
+              size: 1.25em
+              style: italic
+              family: $font-info
         .artykul2
           $art-hei: 25em
           $szer: 100%
@@ -358,7 +409,7 @@ html
           height: $art-hei
           overflow: hidden
           transition: all 0.5s
-          font-family: 'Roboto Condensed', sans-serif
+          font-family: $font-artykul
           +from(280px)
             height: $art-hei - 16em
           +from(320px)
@@ -388,120 +439,6 @@ html
           &:hover
             opacity: 0.9
             width: 100%
-          .art-text
-            // +kolory(blue, $kolor)
-            .data
-              width: auto
-              height: auto
-              position: absolute
-              +from(220px)
-                margin: ($art-hei - 21.5em) 1.5em
-              +from(320px)
-                margin: ($art-hei - 20em) 1.5em
-              +from(420px)
-                margin: ($art-hei - 18.5em) 1.5em
-              +from(520px)
-                margin: ($art-hei - 17em) 1.5em
-              +from(620px)
-                margin: ($art-hei - 15.5em) 1.5em
-              +from(720px)
-                margin: ($art-hei - 12.5em) 1.5em
-              // +mobile
-              //   margin: ($art-hei - 11.5em) 1.5em
-              +tablet
-                margin: ($art-hei - 12.5em) 1.5em
-              +desktop
-                margin: ($art-hei - 11.5em) 1.5em
-              +widescreen
-                margin: ($art-hei - 11.5em) 1.5em
-              +fullhd
-                margin: ($art-hei - 11.5em) 1.5em
-              .nowosci-art-kat
-                $nowosci-art-kat: 1.3em
-                +kolory($c-dodatek, $tlo-dodatek)
-                +font($nowosci-art-kat, bold, none)
-                padding: 6px
-                +from(320px)
-                  +font($nowosci-art-kat - 0.5, none, none)
-                +mobile
-                  +font($nowosci-art-kat - 0.4, none, none)
-                +tablet
-                  +font($nowosci-art-kat - 0.3, none, none)
-                +desktop
-                  +font($nowosci-art-kat - 0.2, none, none)
-                +widescreen
-                  +font($nowosci-art-kat - 0.1, none, none)
-                +fullhd
-                  +font($nowosci-art-kat, none, none)
-              span.kat-godz
-                $kat-godz: 1.2em
-                +kolory($kolor, $tytul-przeswit)
-                +font($kat-godz, none, underline)
-                +until(320px)
-                  +font(0.9em, none, none)
-                +mobile
-                  font-size: $kat-godz - 0.3
-                +tablet
-                  font-size: $kat-godz - 0.2
-                +desktop
-                  font-size: $kat-godz - 0.1
-                +widescreen
-                  font-size: $kat-godz
-                +fullhd
-                  font-size: $kat-godz
-                padding: 3px 8px
-                margin: 0 3px
-            .nowosci-art-tyt
-              width: auto
-              height: auto
-              position: absolute
-              margin: ($art-hei - 6.5em) 1.5em
-              +from(220px)
-                margin: ($art-hei - 19em) 1.5em
-              +from(320px)
-                margin: ($art-hei - 17.5em) 1.5em
-              +from(420px)
-                margin: ($art-hei - 15.5em) 1.5em
-              +from(520px)
-                margin: ($art-hei - 14em) 1.5em
-              +from(620px)
-                margin: ($art-hei - 12.5em) 1.5em
-              +from(720px)
-                margin: ($art-hei - 9.5em) 1.5em
-              +tablet
-                margin: ($art-hei - 9em) 1.5em
-              +desktop
-                margin: ($art-hei - 8.5em) 1.5em
-              +widescreen
-                margin: ($art-hei - 8.5em) 1.5em
-              +fullhd
-                margin: ($art-hei - 8.5em) 1.5em
-              span.tytul
-                $span-tytul: 1.55em
-                +kolory($kolor, $tytul-przeswit)
-                +font($span-tytul, bold, underline)
-                font-family: 'Oswald', sans-serif
-                padding: 4px 16px
-                +from(220px)
-                  font-size: $span-tytul - 0.8
-                +from(320px)
-                  font-size: $span-tytul - 0.5
-                +from(420px)
-                  font-size: $span-tytul - 0.5
-                +from(520px)
-                  font-size: $span-tytul - 0.5
-                +from(620px)
-                  font-size: $span-tytul - 0.15
-                +from(720px)
-                  font-size: $span-tytul - 0.05
-                +tablet
-                  font-size: $span-tytul - 0.1
-                +desktop
-                  font-size: $span-tytul - 0.25
-                +widescreen
-                  font-size: $span-tytul - 0.2
-                +fullhd
-                  font-size: $span-tytul - 0.1
         .artykul-tresc
           margin: 1em auto
           +wymiary(auto, 95%)
@@ -528,7 +465,7 @@ html
           margin: 0 auto
           +wymiary(6em, 100%)
           background-color: $tlo
-          font-family: 'Roboto Condensed', sans-serif
+          font-family: $font-paginacja
           .paginacja
             margin-top: 1em
             .ilosc-stron
@@ -597,7 +534,7 @@ html
               span
                 $podobne-tytul: 1.5em
                 +font($podobne-tytul, bold, underline)
-                font-family: 'Oswald', sans-serif
+                font-family: $font-title
                 +from(220px)
                   font-size: $podobne-tytul - 0.8
                 +from(320px)
@@ -621,7 +558,7 @@ html
     footer
       margin: 0 auto
       text-align: center
-      font-family: 'Roboto Condensed', sans-serif
+      font-family: $font-footer
       +mobile
         +wymiary($foo-wys-mobile + 4.5, $szer-mobile)
       +tablet
