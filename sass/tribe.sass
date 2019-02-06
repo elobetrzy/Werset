@@ -617,12 +617,18 @@ html
       #footer-menu
         +wymiarymin($footer-social-wymiar, 100%)
         +kolory($kolor, $tlo-stopka)
+        display: table
         #footer-menu-opcje
-          +wymiarymin(auto, auto)
           padding: $footer-margin
-          a
-            text-transform: uppercase
-            margin-right: 10px
-            padding: 8px 16px
-            +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek, $tlo, $kolor)
-            +font(1.3em, bold, none)
+          margin: auto
+          .footer-przyciski
+            padding: 5px
+            float: left
+            text-align: center
+            display: contents
+            a
+              text-transform: uppercase
+              margin-right: 10px
+              padding: 8px 16px
+              +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek, $tlo, $kolor)
+              +font(1.3em, bold, none)
