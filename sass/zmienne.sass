@@ -20,6 +20,27 @@ $tlo-stopka: lighten($tlo, 3.75%)
 $kolor-glosuj: white
 $kolor-plus: rgb(72, 149, 45)
 $kolor-minus: rgb(176, 40, 40)
+// KOLORY KOMENTARZA
+// Kolor calej kolumny
+$k-komentarz-all: $tlo
+// Kolor calej kolumny oprocz tytulu (czyli tlo wciec)
+$k-komentarz-all2: $tlo
+// Kolor tla komentarza
+$k-komentarz: $tlo
+// Kolor tla gornej belki komentarza
+$k-komentarz-belka: $bg-kat
+$k-komentarz-belka2: darken($bg-kat, 10%)
+// Kolor tla dolnej belki komentarza
+$k-komentarz-footer: $tlo
+
+// Kolor autora komentarza
+$k-komentarz-autor: $tlo
+$k-komentarz-data: $tlo
+$k-komentarz-tresc: $kolor
+$k-komentarz-glosy: $kolor
+
+
+
 // WYMIARY RWD
 // Ogolna szerokosc
 $szer-mobile: 100%
@@ -27,7 +48,10 @@ $szer-tablet: 100%
 $szer-desktop: 100%
 $szer-widescreen: 90%
 $szer-fullhd: 80%
-
+// Jaka ma byc szerokosc diva z tytulem na desktopach-fullhd
+$komentarz-tytul-szerokosc: 50%
+// O ile ma byc wydluzony div na tytul na urzadzeniu mobilnym
+$komentarz-tytul-szerokosc-mob: 10%
 // HEADER
 // Wysokosc
 $naw-wys-mobile: 4em
@@ -67,11 +91,13 @@ $font-przycisk2: 'Roboto Condensed', sans-serif
 $font-kom-tytul: 'Oswald', sans-serif
 $font-kom-data: 'Oswald', sans-serif
 $font-kom-tresc: 'Roboto Condensed', sans-serif
+$font-kom-glosy: 'Roboto Condensed', sans-serif
 $font-kom-przycisk: $font-przycisk
 $font-size: 3em
-$size-kom-tytul: 2em
+$size-kom-tytul: 1.8em
 $size-kom-tresc: 1.3em
 $size-kom-data: 1.5em
+$size-kom-glosy: 1.5em
 $size-kom-przycisk: 1em
 
 // EXTENDY

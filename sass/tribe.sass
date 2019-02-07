@@ -157,7 +157,7 @@ html
             font-family: $font-przycisk
             text-transform: uppercase
             @extend %zaznaczenie-off
-            +przycisk($c-kat, $bg-kat, $kolor, $tlo, yellow, green, blue, red)
+            +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek2, $kolor, $dodatek2)
             +mobile
               font-size: 2.5em
             +tablet-only
@@ -520,58 +520,75 @@ html
             +tablet
               height: 5.75em
             +mobile
-              +wymiary(7em, 100% / ($ilosc / 2))
+              +wymiary(6.3em, 100% / ($ilosc / 2))
             i
               font-size: 7em
               +tablet
                 font-size: 5em
               +mobile
-                font-size: 6em
+                font-size: 5.3em
         #komentarze
           // Margin to margin-left komentarza odpowiadajacego
-          $margin: 25%
+          $margin: 15%
           $rozmiar: 8em
           $padding: 0.5em
           $padding-przycisk: 1em
           $padding-data: 0.7em
           +wymiary(auto, 100%)
-          +kolory(blue, green)
+          +kolory(none, $k-komentarz-all2)
           #komentarz-tytul
-            +kolory(darkred, aqua)
+            +kolory($kolor, $k-komentarz-all)
             margin: 0 auto
             text-align: center
             padding: 2em 0
             // margin-top: 1.5em
             span
               +font($font-size, none, none)
-              text-transform: capitalize
+              font-style: italic
+              text-transform: uppercase
               @extend %zaznaczenie-off
           .komentarz
-            $komentarz-tytul-szerokosc: 50%
             +wymiary(auto, 100%)
-            +kolory(white, magenta)
+            +kolory(white, $k-komentarz-belka)
             .komentarz-tytul
-              +kolory(lime, darkgrey)
+              +kolory($k-komentarz-autor, $k-komentarz-belka)
               +wymiary(auto, $komentarz-tytul-szerokosc)
               padding: $padding 0
+              +mobile
+                width: $komentarz-tytul-szerokosc + $komentarz-tytul-szerokosc-mob
+              +tablet
+                width: $komentarz-tytul-szerokosc + $komentarz-tytul-szerokosc-mob
               span
                 margin-left: $padding
                 text-decoration: underline
                 +zaznaczenie
                   @extend %zaznaczenie
+                +mobile
+                  font-size: $size-kom-tytul - 0.5
+                +tablet
+                  font-size: $size-kom-tytul - 0.25
                 font:
                   family: $font-kom-tytul
                   size: $size-kom-tytul
                   weight: bold
             .komentarz-data
-              +kolory(black, white)
+              +kolory($k-komentarz-data, $k-komentarz-belka)
               +wymiary(auto, 100% - $komentarz-tytul-szerokosc)
               padding: $padding-data 0 0 0
+              +mobile
+                width: $komentarz-tytul-szerokosc - $komentarz-tytul-szerokosc-mob
+                padding: $padding-data - 0.2 0 0 0
+              +tablet
+                width: $komentarz-tytul-szerokosc - $komentarz-tytul-szerokosc-mob
               span
                 margin-right: $padding-data
                 float: right
                 +zaznaczenie
                   @extend %zaznaczenie
+                +mobile
+                  font-size: $size-kom-data - 0.35
+                +tablet
+                  font-size: $size-kom-data - 0.25
                 text:
                   // decoration: underline
                 font:
@@ -580,7 +597,7 @@ html
                   weight: none
                   style: italic
             .komentarz-tresc
-              +kolory(black, lightsalmon)
+              +kolory($k-komentarz-tresc, $k-komentarz)
               +wymiary(auto, 100%)
               padding: $padding 0
               span
@@ -593,11 +610,12 @@ html
                   family: $font-kom-tresc
             .komentarz-opcje
               +wymiary(auto, 100%)
-              +kolory(mediumpurple, MediumSpringGreen)
-              $glosuj: 25%
+              +kolory(none, $k-komentarz-footer)
+              $glosuj: $margin
+              $glosy: 12%
               .komentarz-glosuj
                 +wymiary(auto, $glosuj)
-                +kolory(white, purple)
+                +kolory($k-komentarz-glosy, $k-komentarz-footer)
                 @extend %zaznaczenie-off
                 // padding: $padding 0
                 %glosowanie
@@ -612,12 +630,24 @@ html
                 .glosuj-minus
                   +kolory($kolor-glosuj, $kolor-minus)
                   @extend %glosowanie
+              .komentarz-glosy
+                +wymiary(auto, $glosy)
+                +kolory($k-komentarz-glosy, $k-komentarz-footer)
+                @extend %zaznaczenie
+                float: left
+                margin: 0
+                text-align: center
+                padding: $padding - 0.1 0 0 0
+                @extend %zaznaczenie-off
+                font:
+                  size: $size-kom-glosy
+                  family: $font-kom-glosy
               .komentarz-odpowiedz
-                +wymiary(auto, 100% - $glosuj)
-                +kolory(lightskyblue, darkblue)
+                +wymiary(auto, 100% - ($glosuj + $glosy))
+                +kolory($k-komentarz-glosy, $k-komentarz-footer)
                 padding: 0 0 $padding-przycisk 0
                 a
-                  +kolory(black, rgb(200, 236, 97))
+                  +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek2, $kolor, $dodatek2)
                   float: right
                   margin-right: $padding-przycisk
                   padding: 8px 8px
@@ -630,9 +660,123 @@ html
                     family: $font-przycisk2
                     weight: bold
           .komentarz-2
-            +wymiary($rozmiar, (100% - $margin))
-            +kolory(white, magenta)
+            $komentarz-tytul-szerokosc: 50%
+            +wymiary(auto, 100% - $margin)
+            +kolory(white, $k-komentarz-belka2)
             margin-left: $margin
+            .komentarz-tytul
+              +kolory($k-komentarz-autor, $k-komentarz-belka2)
+              +wymiary(auto, $komentarz-tytul-szerokosc)
+              padding: $padding 0
+              +mobile
+                width: $komentarz-tytul-szerokosc + $komentarz-tytul-szerokosc-mob
+              +tablet
+                width: $komentarz-tytul-szerokosc + $komentarz-tytul-szerokosc-mob
+              span
+                margin-left: $padding
+                text-decoration: underline
+                +zaznaczenie
+                  @extend %zaznaczenie
+                +mobile
+                  font-size: $size-kom-tytul - 0.5
+                +tablet
+                  font-size: $size-kom-tytul - 0.25
+                font:
+                  family: $font-kom-tytul
+                  size: $size-kom-tytul
+                  weight: bold
+            .komentarz-data
+              +kolory($k-komentarz-data, $k-komentarz-belka2)
+              +wymiary(auto, 100% - $komentarz-tytul-szerokosc)
+              padding: $padding-data 0 0 0
+              +mobile
+                width: $komentarz-tytul-szerokosc - $komentarz-tytul-szerokosc-mob
+                padding: 0
+                text-align: center
+              +tablet
+                width: $komentarz-tytul-szerokosc - $komentarz-tytul-szerokosc-mob
+              span
+                margin-right: $padding-data
+                float: right
+                +zaznaczenie
+                  @extend %zaznaczenie
+                +mobile
+                  font-size: $size-kom-data - 0.35
+                +tablet
+                  font-size: $size-kom-data - 0.25
+                text:
+                  // decoration: underline
+                font:
+                  family: $font-kom-data
+                  size: $size-kom-data
+                  weight: none
+                  style: italic
+            .komentarz-tresc
+              +kolory($k-komentarz-tresc, $k-komentarz)
+              +wymiary(auto, 100%)
+              padding: $padding 0
+              span
+                display: inline-block
+                margin: 0 $padding
+                +zaznaczenie
+                  @extend %zaznaczenie
+                font:
+                  size: $size-kom-tresc
+                  family: $font-kom-tresc
+            .komentarz-opcje
+              +wymiary(auto, 100%)
+              +kolory(none, $k-komentarz-footer)
+              $glosuj: $margin
+              $kom2-glosuj-szer: ((100% / (100% - $glosuj)) * $glosuj)
+              $glosy: 12%
+              $kom2-glosy-szer: ((100% / (100% - $glosy)) * $glosy)
+              .komentarz-glosuj
+                +wymiary(auto, $kom2-glosuj-szer)
+                +kolory($k-komentarz-glosy, $k-komentarz-footer)
+                @extend %zaznaczenie-off
+                // padding: $padding 0
+                %glosowanie
+                  +wymiary(auto, 50%)
+                  margin: 0
+                  float: left
+                  text-align: center
+                  font-size: 2.65em
+                .glosuj-plus
+                  +kolory($kolor-glosuj, $kolor-plus)
+                  @extend %glosowanie
+                .glosuj-minus
+                  +kolory($kolor-glosuj, $kolor-minus)
+                  @extend %glosowanie
+              .komentarz-glosy
+                +wymiary(auto, $kom2-glosy-szer)
+                +kolory($k-komentarz-glosy, $k-komentarz-footer)
+                @extend %zaznaczenie
+                float: left
+                margin: 0
+                text-align: center
+                padding: $padding - 0.1 0 0 0
+                @extend %zaznaczenie-off
+                font:
+                  size: $size-kom-glosy
+                  family: $font-kom-glosy
+              .komentarz-odpowiedz
+                +wymiary(auto, 100% - ($kom2-glosuj-szer + $kom2-glosy-szer))
+                +kolory($k-komentarz-glosy, $k-komentarz-footer)
+                padding: 0 0 $padding-przycisk 0
+                a
+                  +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek2, $kolor, $dodatek2)
+                  float: right
+                  margin-right: $padding-przycisk
+                  padding: 8px 8px
+                  @extend %zaznaczenie-off
+                  text:
+                    decoration: none
+                    transform: uppercase
+                  font:
+                    size: $size-kom-przycisk
+                    family: $font-przycisk2
+                    weight: bold
+          // .komentarz-2
       #podobne
         // +mobile
         // +tablet
@@ -785,7 +929,7 @@ html
               text-transform: uppercase
               margin-right: 10px
               padding: 8px 16px
-              +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek, $tlo, $kolor)
+              +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek2, $kolor, $dodatek2)
               +font(1.3em, bold, none)
               font-family: $font-przycisk
               @extend %zaznaczenie-off
