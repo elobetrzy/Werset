@@ -1,13 +1,11 @@
 // KOLORY
 $dodatek: rgb(96, 215, 1)
-$bg: black
-$bg2: lighten($bg, 7.5%)
-$tlo-stopka: lighten($bg, 3.75%)
-$kolor: rgb(255, 255, 255)
+$dodatek2: rgb(210, 28, 34)
 $fiolet: rgb(79, 64, 246)
 // KOLORY
 $kolor: white
 $tlo: black
+$bg2: lighten($tlo, 7.5%)
 $c-dodatek: $kolor
 $tlo-dodatek: rgb(131, 26, 26)
 $tlo2: lighten($tlo, 15%)
@@ -16,7 +14,8 @@ $bg-log: $tlo
 $bg-naw: $tlo2
 $c-kat: black
 $bg-kat: yellow
-$tytul-przeswit: rgba(0, 0, 0, 0.8)
+$tytul-przeswit: rgba($tlo, 0.8)
+$tlo-stopka: lighten($tlo, 3.75%)
 // WYMIARY RWD
 // Ogolna szerokosc
 $szer-mobile: 100%
@@ -60,8 +59,18 @@ $font-artykul: 'Roboto Condensed', sans-serif
 $font-paginacja: 'Roboto Condensed', sans-serif
 $font-footer: 'Roboto Condensed', sans-serif
 
+// EXTENDY
+// Zmiana zaznaczenia
+%zaznaczenie
+  +kolory($tlo, $bg-kat)
+%zaznaczenie-off
+  -moz-user-select: none
+  -ms-user-select: none
+  -khtml-user-select: none
+  -webkit-user-select: none
+  -webkit-touch-callout: none
 
-// ZMIENNE
+// ZMIENNE / GRID
 $jedna-dwunasta: (100% / 12) * 1
 $jedna-szosta: (100% / 12) * 2
 $jedna-czwarta: (100% / 12) * 3

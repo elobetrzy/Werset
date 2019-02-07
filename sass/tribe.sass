@@ -58,6 +58,7 @@ html
             padding: 13px
           span
             color: $c-log
+            @extend %zaznaczenie-off
             +mobile
               +wymiary($naw-wys-mobile, auto)
               font-size: 2em
@@ -79,6 +80,7 @@ html
               font-size: 2em
               font-weight: bold
         #logotyp-logo
+          @extend %zaznaczenie-off
           +mobile
             margin-right: 10px
           +tablet
@@ -154,12 +156,12 @@ html
             +font(1.5em, none, none)
             font-family: 'Staatliches', cursive
             text-transform: uppercase
-            // +kolory($c-kat, $bg-kat)
+            @extend %zaznaczenie-off
             +przycisk($c-kat, $bg-kat, $kolor, $tlo, yellow, green, blue, red)
             +mobile
-              font-size: 1.5em
+              font-size: 2.5em
             +tablet-only
-              font-size: 1.5em
+              font-size: 3em
             +desktop
               font-size: 1.5em
               padding: 4px
@@ -269,6 +271,8 @@ html
                 +kolory($c-dodatek, $tlo-dodatek)
                 +font($nowosci-art-kat, bold, none)
                 padding: 6px
+                +zaznaczenie
+                  @extend %zaznaczenie
                 +from(320px)
                   +font($nowosci-art-kat - 0.5, none, none)
                 +mobile
@@ -285,6 +289,8 @@ html
                 $kat-godz: 1.2em
                 +kolory($kolor, $tytul-przeswit)
                 +font($kat-godz, none, underline)
+                +zaznaczenie
+                  @extend %zaznaczenie
                 +until(320px)
                   +font(0.9em, none, none)
                 +mobile
@@ -330,6 +336,8 @@ html
                 +font($span-tytul, bold, underline)
                 font-family: $font-title
                 padding: 4px 16px
+                +zaznaczenie
+                  @extend %zaznaczenie
                 +from(220px)
                   font-size: $span-tytul - 0.8
                 +from(320px)
@@ -353,6 +361,8 @@ html
         .artykul2-tytul
           $artykul2-tytul: 3em
           width: 90%
+          +zaznaczenie
+            @extend %zaznaczenie
           text:
             align: center
             decoration: underline
@@ -380,6 +390,8 @@ html
             +kolory($c-dodatek, $tlo-dodatek)
             +font($nowosci-art-kat, bold, none)
             padding: 6px
+            +zaznaczenie
+              @extend %zaznaczenie
             +from(320px)
               +font($nowosci-art-kat - 0.5, none, none)
             +mobile
@@ -392,11 +404,24 @@ html
               +font($nowosci-art-kat - 0.1, none, none)
             +fullhd
               +font($nowosci-art-kat, none, none)
-          .artykul2-info-godzina
+          .artykul2-info-autor
             margin-left: 1em
+            color: $bg-kat
+            padding: 4px
+            text-decoration: underline
+            +zaznaczenie
+              @extend %zaznaczenie
+            font:
+              size: 1.35em
+              weight: bold
+              family: $font-info
+          .artykul2-info-godzina
+            margin-left: 0.6em
             color: $kolor
             padding: 4px
             text-decoration: underline
+            +zaznaczenie
+              @extend %zaznaczenie
             font:
               size: 1.25em
               style: italic
@@ -448,6 +473,8 @@ html
             text-align: center
             +kolory($tlo2, $bg-kat)
             font-size: $artykul-tresc-p + 0.3
+            +zaznaczenie
+              @extend %zaznaczenie
             &::first-line
               font-size: $artykul-tresc-p - 0.2
               +kolory($bg-kat, $tlo)
@@ -455,10 +482,14 @@ html
           p.tresc
             font-size: $artykul-tresc-p
             color: $kolor
+            +zaznaczenie
+              @extend %zaznaczenie
             &::first-letter
               font-size: $artykul-tresc-p + 0.2
               +kolory($tlo, $bg-kat)
               padding: 0px 6px
+        .komentarze-container
+          +wymiary(auto, 100%)
         #pagination
           float: left
           text-align: center
@@ -472,10 +503,30 @@ html
               text-align: center
               margin-left: 8px
               padding: 8px
+              @extend %zaznaczenie-off
               +kolory($c-kat, $bg-kat)
               +font(1.25em, bold, none)
               +wymiary(auto, auto)
               +przycisk($c-kat, $bg-kat, $bg-kat, $c-kat, $bg-kat, $tlo2, $c-dodatek, $tlo-dodatek)
+        #podziel-sie
+          +wymiary(5em, 100%)
+          .share
+            +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek2, $kolor, $dodatek2)
+            $ilosc: 8
+            +wymiary(8em, 100% / $ilosc)
+            float: left
+            padding-top: 0.75em
+            text-align: center
+            +tablet
+              height: 5.75em
+            +mobile
+              +wymiary(7em, 100% / ($ilosc / 2))
+            i
+              font-size: 7em
+              +tablet
+                font-size: 5em
+              +mobile
+                font-size: 6em
       #podobne
         // +mobile
         // +tablet
@@ -504,6 +555,7 @@ html
             color: $kolor
             text-transform: uppercase
             font-style: italic
+            @extend %zaznaczenie-off
         .zobacztez
           $podobne-wys: 10em
           border-bottom: 2px solid rgb(93, 198, 60)
@@ -535,6 +587,8 @@ html
                 $podobne-tytul: 1.5em
                 +font($podobne-tytul, bold, underline)
                 font-family: $font-title
+                +zaznaczenie
+                  @extend %zaznaczenie
                 +from(220px)
                   font-size: $podobne-tytul - 0.8
                 +from(320px)
@@ -555,6 +609,7 @@ html
                   font-size: $podobne-tytul - 0.2
                 +fullhd
                   font-size: $podobne-tytul - 0.1
+
     footer
       margin: 0 auto
       text-align: center
@@ -573,20 +628,10 @@ html
         padding: $footer-margin 0
         +wymiary($footer-logo-wymiar, 100%)
         +kolory($kolor, $tlo-stopka)
+        @extend %zaznaczenie-off
         img
           +wymiaryman($footer-logo-wymiar, auto)
-          // +mobile
-          //   +wymiaryman($footer-logo-wymiar, auto)
-          // +tablet
-          //   +wymiaryman($footer-logo-wymiar, auto)
-          // +desktop
-          //   +wymiaryman($footer-logo-wymiar, auto)
-          // +widescreen
-          //   +wymiaryman($footer-logo-wymiar, auto)
-          // +fullhd
-          //   +wymiaryman($footer-logo-wymiar, auto)
       #footer-social
-
         $ilosc-social: 3
         +wymiary($footer-social-wymiar, 100%)
         +kolory($kolor, $tlo-stopka)
@@ -607,6 +652,8 @@ html
             margin-left: 1em
             &:first-child
               margin-left: 0
+            // &:hover
+            //   border: 1px dashed black
             span
               font-size: 2em
             a
@@ -626,9 +673,12 @@ html
             float: left
             text-align: center
             display: contents
+            +mobile
+              padding: 0
             a
               text-transform: uppercase
               margin-right: 10px
               padding: 8px 16px
               +przycisk($tlo, $bg-kat, $bg-kat, $tlo, $kolor, $dodatek, $tlo, $kolor)
               +font(1.3em, bold, none)
+              @extend %zaznaczenie-off
